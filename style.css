@@ -1,0 +1,151 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+:root{
+    --clr-main-background:hsl(233, 47%, 7%);
+    --clr-card-background:hsl(244, 38%, 16%);
+    --clr-accent:hsl(277, 64%, 61%);
+    --clr-heading-of-stats:hsl(0, 0%, 100%);
+    --clr-main-paragraph-stats:hsla(0, 0%, 100%, 0.75);
+    --clr-stats-heading:hsla(0, 0%, 100%, 0.6);
+
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--clr-main-background);
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+  .container{
+    background-color: var(--clr-card-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius:0.5rem;
+    overflow: hidden;
+    width:80vw;
+    max-width: 375px;
+    color:white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings:
+      "slnt" 0;
+    
+}
+  .image picture{
+    margin-bottom: 1rem;
+    position: relative;
+}
+.image picture::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: hsla(275, 75%, 40%,0.4);
+}
+.heading{
+    font-size: 1.3rem;
+    width: 70%;
+    margin:0 auto 1rem auto;
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 700;
+    color:var(--clr-heading-of-stats)
+  }
+  .heading > span{
+    color:var(--clr-accent);
+  }
+  .description {
+    margin: 0 auto 1rem auto;
+    width:80%;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color:var(--clr-main-paragraph-stats);
+  }
+  .stats{
+    list-style: none;
+  }
+  .stats li{
+    display: flex;
+    flex-direction: column;
+    gap:0.001rem;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.875rem;
+  }
+  .stats li:last-child{
+    margin-bottom: 2rem;
+  }
+  .stats li > span:first-child{
+    color: var(--clr-heading-of-stats);
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+  .stats li > span:last-child{
+    font-size: 0.7rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:var(--clr-main-paragraph-stats);
+  }
+
+  @media screen and (min-width:600px){
+    .container{
+        flex-direction: row-reverse;
+        max-width:900px;
+
+    }
+    .text{
+        padding:0.9rem;
+        width:50%;
+    }
+    .heading{
+        width: 70%;
+        margin-bottom: 1.5rem;
+    }
+    .description{
+        margin-bottom: 3rem;
+        text-align: left;
+    }
+ 
+    img {
+       
+    }
+    .stats{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        
+    }
+  }
